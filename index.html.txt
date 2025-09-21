@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sym-Tech Vietnam | CT Scanners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #004080;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            background: #0066cc;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #005bb5;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        section h2 {
+            color: #004080;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            background: #004080;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #004080;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #003366;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sym-Tech Vietnam</h1>
+    <p>Innovative CT Scanner Solutions</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">Over Ons</a>
+    <a href="#product">Producten</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welkom bij Sym-Tech</h2>
+    <p>Sym-Tech is een Vietnamese startup gespecialiseerd in de productie van high-end CT-scanners voor medische toepassingen. Ons doel is om binnen een jaar onze eerste CT-scanner op de markt te brengen, met innovatieve technologie en betrouwbare prestaties.</p>
+    <a href="#contact" class="btn">Neem Contact Op</a>
+</section>
+
+<section id="about">
+    <h2>Over Ons</h2>
+    <p>Sym-Tech werd opgericht met de visie om de medische beeldvorming in Vietnam te verbeteren. Ons team bestaat uit ervaren ingenieurs en medisch-technische experts die samenwerken om hoogwaardige diagnostische apparaten te ontwikkelen die toegankelijk en betrouwbaar zijn.</p>
+</section>
+
+<section id="product">
+    <h2>Onze CT Scanner</h2>
+    <p>Onze CT-scanner is ontworpen met een focus op:</p>
+    <ul>
+        <li>Hoge resolutie beeldvorming</li>
+        <li>Snelle scan tijden</li>
+        <li>Betrouwbaarheid en veiligheid</li>
+        <li>Gebruiksvriendelijke interface voor medische professionals</li>
+    </ul>
+    <a href="#contact" class="btn">Meer Informatie</a>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Neem contact met ons op voor partnerschappen, investeringsmogelijkheden of vragen over onze CT-scanners.</p>
+    <form action="mailto:info@sym-tech.vn" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Uw Naam" required>
+        <input type="email" name="email" placeholder="Uw E-mail" required>
+        <textarea name="message" rows="5" placeholder="Uw Bericht" required></textarea>
+        <button type="submit">Verstuur</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 Sym-Tech Vietnam | All Rights Reserved
+</footer>
+
+</body>
+</html>
