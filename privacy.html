@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Bảo Mật | Sym-Tech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header placeholder -->
+<div id="header"></div>
+
+<main class="content">
+    <section>
+        <h2>1. Giới thiệu</h2>
+        <p>Sym-Tech Co., Ltd. (“Sym-Tech”, “chúng tôi”) tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân của bạn. 
+        Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin khi bạn truy cập trang web 
+        <a href="https://symtech.vn">symtech.vn</a> hoặc liên hệ với chúng tôi.</p>
+
+        <h2>2. Thông tin chúng tôi thu thập</h2>
+        <ul>
+            <li>Họ tên, email, số điện thoại, hoặc tên tổ chức (khi bạn liên hệ)</li>
+            <li>Dữ liệu kỹ thuật như trình duyệt, địa chỉ IP, các trang đã truy cập (qua công cụ như Google Analytics)</li>
+            <li>Tệp hoặc thông tin bạn tự nguyện cung cấp</li>
+        </ul>
+
+        <h2>3. Mục đích sử dụng thông tin</h2>
+        <ul>
+            <li>Trả lời yêu cầu và cung cấp dịch vụ</li>
+            <li>Cải thiện trang web và trải nghiệm khách hàng</li>
+            <li>Tuân thủ các quy định pháp luật</li>
+        </ul>
+
+        <h2>4. Chia sẻ dữ liệu</h2>
+        <p>Chúng tôi <strong>không</strong> bán hoặc cho thuê thông tin cá nhân của bạn. 
+        Thông tin chỉ được chia sẻ với các nhà cung cấp dịch vụ đáng tin cậy (như lưu trữ, email, phân tích dữ liệu) 
+        theo cam kết bảo mật.</p>
+
+        <h2>5. Lưu trữ và bảo mật dữ liệu</h2>
+        <p>Dữ liệu của bạn được lưu trữ an toàn thông qua các nền tảng đáng tin cậy như Google Workspace và máy chủ được xác minh. 
+        Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức hợp lý để ngăn chặn truy cập hoặc mất mát trái phép.</p>
+
+        <h2>6. Quyền của bạn</h2>
+        <p>Bạn có thể yêu cầu truy cập, chỉnh sửa hoặc xóa thông tin cá nhân của mình bất kỳ lúc nào bằng cách liên hệ với chúng tôi qua:</p>
+        <p>📧 <a href="mailto:symtechvn@gmail.com">symtechvn@gmail.com</a><br>
+        🏢 Sym-Tech Co., Ltd., Thành phố Hà Nội, Việt Nam</p>
+
+        <h2>7. Cập nhật chính sách</h2>
+        <p>Chúng tôi có thể cập nhật chính sách này khi có thay đổi về quy định, kỹ thuật hoặc hoạt động kinh doanh. 
+        Mọi cập nhật sẽ được đăng trên trang này với ngày “Cập nhật gần nhất”.</p>
+        <p><em>Cập nhật gần nhất: Tháng 10 năm 2025</em></p>
+    </section>
+</main>
+
+<!-- Footer placeholder -->
+<div id="footer"></div>
+
+<!-- Load header and footer dynamically -->
+<script>
+  async function loadPartial(id, file) {
+    const el = document.getElementById(id);
+    if (el) {
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+  }
+  loadPartial('header', 'header.html');
+  loadPartial('footer', 'footer.html');
+</script>
+
+</body>
+</html>

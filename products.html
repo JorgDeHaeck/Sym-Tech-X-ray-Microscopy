@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D X-ray Microscopy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<section id="product">
+  <h2>Sản Phẩm của Chúng Tôi</h2>
+  <p>Sym-Tech đang phát triển thế hệ kính hiển vi X-quang 3D nhỏ gọn và có chi phí hợp lý dành cho thị trường công nghiệp và học thuật. Hệ thống của chúng tôi cho phép khám phá cấu trúc bên trong mẫu ở độ phân giải micromet — cho phép kiểm tra chất lượng cao mà không làm hỏng mẫu.</p>
+
+  <ul>
+    <li><strong>Đa dụng:</strong> Phù hợp với nhiều loại vật liệu và mẫu thử khác nhau.</li>
+    <li><strong>Không phá hủy:</strong> Bảo tồn nguyên trạng mẫu nhờ chụp ảnh 3D không xâm lấn.</li>
+    <li><strong>Phát hiện khuyết tật:</strong> Xác định vết nứt, khoảng rỗng và tạp chất trong không gian 3D.</li>
+    <li><strong>Phân tích chi tiết:</strong> Dữ liệu thể tích 3D cho phép nghiên cứu đặc điểm bên trong và bên ngoài một cách tường tận.</li>
+  </ul>
+</section>
+
+<div id="footer"></div>
+
+<script>
+  async function loadPartial(id, file) {
+    const el = document.getElementById(id);
+    if (el) {
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+  }
+  loadPartial('header', 'header.html');
+  loadPartial('footer', 'footer.html');
+</script>
+
+</body>
+</html>
