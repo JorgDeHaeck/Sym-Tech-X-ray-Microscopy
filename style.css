@@ -176,7 +176,7 @@ nav a:hover::after {
 /* ---------- Hero Banner ---------- */
 .hero {
     aspect-ratio: 17 / 2;
-    background: url("images/hero.png") center center / cover no-repeat;
+    background: url("Images/Hero.png") center center / cover no-repeat;
     background-color: #009999;
     display: flex;
     justify-content: center;
