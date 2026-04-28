@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D X-ray Microscopy</title>
+  <!-- Load Inter font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<section id="contact">
+  <h2>Quan tâm tham gia?</h2>
+
+  <p>Sym-Tech đang phát triển một hệ thống kính hiển vi micro-CT X-quang nhỏ gọn, được tối ưu hóa cho các ứng dụng công nghiệp và nghiên cứu học thuật.</p>
+
+  <p>Chúng tôi luôn sẵn sàng trao đổi thêm về loại mẫu, yêu cầu độ phân giải và các ứng dụng thực tế nhằm tối ưu hóa thiết kế hệ thống cho từng nhu cầu cụ thể.</p>
+
+  <p>Chúng tôi cũng đang tìm kiếm các nhà sáng lập, cố vấn hoặc đối tác có kinh nghiệm trong lĩnh vực công nghệ và thị trường Việt Nam để cùng phát triển hệ sinh thái sản phẩm.</p>
+
+  <hr>
+
+  <h3>Chúng tôi đang tìm kiếm một người phụ trách thương mại</h3>
+
+  <p><strong>Cơ hội tham gia:</strong><br>
+  Chúng tôi đang tìm kiếm một người phụ trách thương mại để thúc đẩy phát triển thị trường và thương mại hóa quốc tế cho hệ thống.</p>
+
+  <h4>Trách nhiệm chính:</h4>
+  <ul>
+    <li>Xây dựng và triển khai chiến lược đưa sản phẩm ra thị trường cho hệ thống X-quang phục vụ công nghiệp và khoa học</li>
+    <li>Tìm kiếm, kết nối và phát triển quan hệ với khách hàng đầu tiên, nhà phân phối và đối tác chiến lược</li>
+    <li>Trực tiếp tham gia các trao đổi thương mại, chuyển đổi năng lực kỹ thuật thành giá trị kinh doanh rõ ràng cho từng phân khúc thị trường</li>
+    <li>Hỗ trợ xây dựng chiến lược giá, định vị sản phẩm và xác thực thị trường giai đoạn đầu</li>
+  </ul>
+
+  <h4>Yêu cầu hồ sơ:</h4>
+  <ul>
+    <li>Có kinh nghiệm trong lĩnh vực thiết bị khoa học, thiết bị công nghiệp hoặc bán hàng B2B công nghệ cao</li>
+    <li>Khả năng giao tiếp tốt bằng tiếng Anh, có hiểu biết hoặc quan tâm đến thị trường châu Á</li>
+    <li>Tư duy chủ động, tinh thần khởi nghiệp, phù hợp với môi trường công nghệ giai đoạn đầu</li>
+    <li>Có khả năng làm việc độc lập và xây dựng kênh thương mại từ một sản phẩm kỹ thuật</li>
+  </ul>
+
+  <p>📧 Liên hệ: <a href="mailto:symtechvn@gmail.com">symtechvn@gmail.com</a></p>
+</section>
+
+<div id="footer"></div>
+
+<script>
+  async function loadPartial(id, file) {
+    const el = document.getElementById(id);
+    if (el) {
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+  }
+  loadPartial('header', 'header.html');
+  loadPartial('footer', 'footer.html');
+</script>
+
+</body>
+</html>
