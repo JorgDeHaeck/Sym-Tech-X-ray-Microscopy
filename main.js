@@ -38,11 +38,15 @@
     try { localStorage.setItem(KEY, lang); } catch (e) { /* storage blocked: ignore */ }
   }
 
+  /* Version tag of this site release. Change it (here AND in the ?v=... of style.css,
+     main.js and scans.js in every .html page) each time a new version is published. */
+  var SITE_VERSION = '20261016c';
+
   /* ---------- Header / footer partials ---------- */
   function loadPartial(id, file) {
     var el = document.getElementById(id);
     if (!el) return Promise.resolve();
-    return fetch(file)
+    return fetch(file + '?v=' + SITE_VERSION)   // version tag: browsers fetch new header/footer after an update
       .then(function (r) { return r.text(); })
       .then(function (html) { el.innerHTML = html; })
       .catch(function () { /* opened without a web server: partials unavailable */ });
