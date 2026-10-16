@@ -1,80 +1,204 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D X-ray Microscopy</title>
+  <title data-en="Scan results | Sym-Tech" data-vi="Kết quả quét | Sym-Tech">Scan results | Sym-Tech</title>
+  <meta name="description" content="Examples of 3D X-ray scans made with the Sym-Tech X-ray microscope."
+        data-en="Examples of 3D X-ray scans made with the Sym-Tech X-ray microscope."
+        data-vi="Các ví dụ quét X-quang 3D được thực hiện bằng kính hiển vi X-quang của Sym-Tech.">
+  <link rel="icon" href="Images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script>(function(){var l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('symtech-lang')}catch(e){}if(l!=='en'&&l!=='vi'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-lang',l)})();</script>
 </head>
 <body>
 
 <div id="header"></div>
 
-<section class="scan-case">
-  <h2>Phân tích nến</h2>
-
-  <div class="scan-gallery">
-    <div class="scan-item">
-      <img src="Images/Candle4.PNG" alt="2D scan">
-      <p>Ảnh lát cắt 2D</p>
-    </div>
-
-    <div class="scan-item">
-      <img src="Images/Candle3.png" alt="3D scan">
-      <p>Tái tạo 3D</p>
-    </div>
-
-    <div class="scan-item">
-      <img src="Images/Candle1.png" alt="Analysis 1">
-      <p>Phân tích cấu trúc</p>
-    </div>
-
-    <div class="scan-item">
-      <img src="Images/Candle2.png" alt="Analysis 2">
-      <p>Phát hiện khuyết tật (bọt khí)</p>
-    </div>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow"><span lang="en">Scan results</span><span lang="vi">Kết quả quét</span></span>
+    <h1><span lang="en">See inside your parts — without cutting them open</span><span lang="vi">Nhìn vào bên trong sản phẩm của bạn — không cần cắt mở</span></h1>
+    <p class="lead" lang="en">Inner structure, assembly, defects and porosity: these examples show what 3D X-ray microscopy can reveal in samples like yours, from a single 2D X-ray image to a full 3D reconstruction and analysis. All were scanned with our XRM prototype. Click an image to enlarge it.</p>
+    <p class="lead" lang="vi">Cấu trúc bên trong, cách lắp ráp, khuyết tật và độ xốp: các ví dụ dưới đây cho thấy kính hiển vi X-quang 3D có thể làm rõ những gì trong các mẫu tương tự như của bạn, từ một ảnh X-quang 2D đến tái tạo và phân tích 3D hoàn chỉnh. Tất cả đều được quét bằng nguyên mẫu XRM của chúng tôi. Nhấp vào hình để phóng to.</p>
   </div>
-
-<h2>Phân tích quả vải</h2>
-
-<div class="scan-gallery">
-  <div class="scan-item">
-    <img src="Images/Lichi2.png" alt="2D scan">
-    <p>Ảnh lát cắt 2D</p>
-  </div>
-
-  <div class="scan-item">
-    <img src="Images/Lichi4.png" alt="3D scan">
-    <p>Tái tạo 3D</p>
-  </div>
-
-  <div class="scan-item">
-    <img src="Images/Lichi1.png" alt="Structure">
-    <p>Phân tích cấu trúc nội bộ</p>
-  </div>
-
-  <div class="scan-item">
-    <img src="Images/Lichi3.png" alt="Reconstructed slice">
-    <p>Lát cắt độ phân giải cao</p>
-  </div>
-</div>
-
-
 </section>
+
+<section class="section">
+  <div class="container">
+    <nav class="cat-filter" aria-label="Categories">
+      <button type="button" class="active" data-filter="all"><span lang="en">All</span><span lang="vi">Tất cả</span></button>
+      <button type="button" data-filter="plastics"><span lang="en">Plastics &amp; assemblies</span><span lang="vi">Nhựa &amp; cụm lắp ráp</span></button>
+      <button type="button" data-filter="pharma"><span lang="en">Pharma &amp; packaging</span><span lang="vi">Dược phẩm &amp; bao bì</span></button>
+      <button type="button" data-filter="food"><span lang="en">Food &amp; agriculture</span><span lang="vi">Thực phẩm &amp; nông sản</span></button>
+      <button type="button" data-filter="materials"><span lang="en">Materials &amp; natural samples</span><span lang="vi">Vật liệu &amp; mẫu tự nhiên</span></button>
+    </nav>
+<div class="cat" id="plastics" data-cat="plastics">
+  <div class="cat-head reveal">
+    <span class="cat-num">01</span>
+    <div><h2><span lang="en">Plastics &amp; assemblies</span><span lang="vi">Nhựa &amp; cụm lắp ráp</span></h2>
+    <p lang="en">Moulded parts and complete assemblies: inner geometry, how the parts fit together, and defects such as voids.</p><p lang="vi">Chi tiết ép nhựa và cụm lắp ráp hoàn chỉnh: hình dạng bên trong, cách các chi tiết lắp ghép với nhau và các khuyết tật như lỗ rỗng.</p></div>
+  </div>
+  <article class="case reveal" id="cube">
+    <div class="case-head">
+      <h3><span lang="en">Puzzle cube</span><span lang="vi">Khối rubik</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="842" height="801" src="Images/res-cube-closed.jpg" alt="Puzzle cube: The closed cube" data-alt-en="Puzzle cube: The closed cube" data-alt-vi="Khối rubik: Khối rubik nguyên vẹn" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">The closed cube</span><span lang="vi">Khối rubik nguyên vẹn</span></figcaption></figure>
+      <figure class="shot contain"><img width="882" height="917" src="Images/res-cube-inside.jpg" alt="Puzzle cube: Virtual cut: the inner mechanism" data-alt-en="Puzzle cube: Virtual cut: the inner mechanism" data-alt-vi="Khối rubik: Lát cắt ảo: cơ cấu bên trong" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Virtual cut: the inner mechanism</span><span lang="vi">Lát cắt ảo: cơ cấu bên trong</span></figcaption></figure>
+      <figure class="shot contain"><img width="724" height="732" src="Images/res-cube-springs.jpg" alt="Puzzle cube: The six springs, separated in software" data-alt-en="Puzzle cube: The six springs, separated in software" data-alt-vi="Khối rubik: Sáu lò xo được tách riêng bằng phần mềm" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">The six springs, separated in software</span><span lang="vi">Sáu lò xo được tách riêng bằng phần mềm</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">A closed mechanism of interlocking plastic parts and six springs, opened virtually, layer by layer.</p><p lang="vi">Một cơ cấu khép kín gồm các chi tiết nhựa khớp với nhau và sáu lò xo, được mở ra ảo theo từng lớp.</p></div>
+  </article>
+  <article class="case reveal" id="candle">
+    <div class="case-head">
+      <h3><span lang="en">Birthday candle</span><span lang="vi">Nến sinh nhật</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="505" height="990" src="Images/candle-front.jpg" alt="Birthday candle: 3D view – front" data-alt-en="Birthday candle: 3D view – front" data-alt-vi="Nến sinh nhật: Hình 3D – mặt trước" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">3D view – front</span><span lang="vi">Hình 3D – mặt trước</span></figcaption></figure>
+      <figure class="shot contain"><img width="1200" height="795" src="Images/candle-pin-cut.jpg" alt="Birthday candle: Virtual cut: the candle foot in the plastic sleeve" data-alt-en="Birthday candle: Virtual cut: the candle foot in the plastic sleeve" data-alt-vi="Nến sinh nhật: Lát cắt ảo: chân nến trong ống nhựa" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Virtual cut: the candle foot in the plastic sleeve</span><span lang="vi">Lát cắt ảo: chân nến trong ống nhựa</span></figcaption></figure>
+      <figure class="shot contain"><img width="652" height="967" src="Images/candle-voids-slice.jpg" alt="Birthday candle: Slice: voids show up as bright spots" data-alt-en="Birthday candle: Slice: voids show up as bright spots" data-alt-vi="Nến sinh nhật: Lát cắt: lỗ rỗng hiện lên thành các đốm sáng" loading="lazy"><span class="tag">2D</span>
+        <figcaption><span lang="en">Slice: voids show up as bright spots</span><span lang="vi">Lát cắt: lỗ rỗng hiện lên thành các đốm sáng</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">How the candle sits in its plastic pin, how the wick is built and where air was trapped in the wax.</p><p lang="vi">Cây nến được giữ trong chân cắm nhựa như thế nào, bấc nến được cấu tạo ra sao và bọt khí bị giữ lại ở đâu trong sáp.</p>
+      <a class="btn btn-outline btn-sm case-link" href="scan-of-the-month.html"><span lang="en">Scan of the month →</span><span lang="vi">Mẫu quét của tháng →</span></a></div>
+  </article>
+</div>
+<div class="cat" id="pharma" data-cat="pharma">
+  <div class="cat-head reveal">
+    <span class="cat-num">02</span>
+    <div><h2><span lang="en">Pharma &amp; packaging</span><span lang="vi">Dược phẩm &amp; bao bì</span></h2>
+    <p lang="en">Sealed packs inspected as they are: content, position and the condition of the packaging itself.</p><p lang="vi">Kiểm tra bao bì kín ở nguyên trạng: thành phần bên trong, vị trí và tình trạng của chính bao bì.</p></div>
+  </div>
+  <article class="case reveal" id="blister">
+    <div class="case-head">
+      <h3><span lang="en">Blister pack</span><span lang="vi">Vỉ thuốc</span></h3>
+    </div>
+    <div class="gallery">
+      <figure class="shot contain"><img width="674" height="918" src="Images/res-blister-3d.jpg" alt="Blister pack: Four pockets, sealed" data-alt-en="Blister pack: Four pockets, sealed" data-alt-vi="Vỉ thuốc: Bốn ô thuốc còn nguyên niêm phong" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Four pockets, sealed</span><span lang="vi">Bốn ô thuốc còn nguyên niêm phong</span></figcaption></figure>
+      <figure class="shot contain"><img width="772" height="918" src="Images/res-blister-see.jpg" alt="Blister pack: Semi-transparent view: the tablets inside" data-alt-en="Blister pack: Semi-transparent view: the tablets inside" data-alt-vi="Vỉ thuốc: Hình bán trong suốt: viên thuốc bên trong" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Semi-transparent view: the tablets inside</span><span lang="vi">Hình bán trong suốt: viên thuốc bên trong</span></figcaption></figure>
+      <figure class="shot contain"><img width="965" height="918" src="Images/res-blister-pocket.jpg" alt="Blister pack: One pocket seen through the foil" data-alt-en="Blister pack: One pocket seen through the foil" data-alt-vi="Vỉ thuốc: Một ô thuốc nhìn xuyên qua màng nhôm" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">One pocket seen through the foil</span><span lang="vi">Một ô thuốc nhìn xuyên qua màng nhôm</span></figcaption></figure>
+      <figure class="shot contain"><img width="965" height="918" src="Images/res-blister-side.jpg" alt="Blister pack: Virtual cut through a pocket and tablet" data-alt-en="Blister pack: Virtual cut through a pocket and tablet" data-alt-vi="Vỉ thuốc: Lát cắt ảo qua ô thuốc và viên thuốc" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Virtual cut through a pocket and tablet</span><span lang="vi">Lát cắt ảo qua ô thuốc và viên thuốc</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">Each tablet is visible inside its sealed pocket, together with the texture of the foil around it.</p><p lang="vi">Từng viên thuốc hiện rõ trong ô kín của nó, cùng với vân bề mặt của lớp màng nhôm xung quanh.</p></div>
+  </article>
+</div>
+<div class="cat" id="food" data-cat="food">
+  <div class="cat-head reveal">
+    <span class="cat-num">03</span>
+    <div><h2><span lang="en">Food &amp; agriculture</span><span lang="vi">Thực phẩm &amp; nông sản</span></h2>
+    <p lang="en">Fruit, seeds and food products seen from the inside: structure, ripeness and hidden damage, without cutting them.</p><p lang="vi">Trái cây, hạt và thực phẩm nhìn từ bên trong: cấu trúc, độ chín và hư hỏng ẩn, mà không cần cắt ra.</p></div>
+  </div>
+  <article class="case reveal" id="apple">
+    <div class="case-head">
+      <h3><span lang="en">Apple</span><span lang="vi">Quả táo</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="640" height="934" src="Images/res-apple-whole.jpg" alt="Apple: Semi-transparent view of the whole apple" data-alt-en="Apple: Semi-transparent view of the whole apple" data-alt-vi="Quả táo: Hình bán trong suốt của cả quả táo" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Semi-transparent view of the whole apple</span><span lang="vi">Hình bán trong suốt của cả quả táo</span></figcaption></figure>
+      <figure class="shot contain"><img width="1009" height="905" src="Images/res-apple-half.jpg" alt="Apple: Virtual cut through the core" data-alt-en="Apple: Virtual cut through the core" data-alt-vi="Quả táo: Lát cắt ảo qua lõi" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Virtual cut through the core</span><span lang="vi">Lát cắt ảo qua lõi</span></figcaption></figure>
+      <figure class="shot contain"><img width="993" height="665" src="Images/res-apple-cut.jpg" alt="Apple: Quarter cut: seeds in their chambers" data-alt-en="Apple: Quarter cut: seeds in their chambers" data-alt-vi="Quả táo: Cắt một phần tư: hạt trong các ngăn" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Quarter cut: seeds in their chambers</span><span lang="vi">Cắt một phần tư: hạt trong các ngăn</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">Core, seeds and the fine texture of the flesh, in any plane through the fruit.</p><p lang="vi">Lõi, hạt và kết cấu mịn của thịt quả, theo bất kỳ mặt cắt nào qua quả.</p></div>
+  </article>
+  <article class="case reveal" id="lychee">
+    <div class="case-head">
+      <h3><span lang="en">Lychee</span><span lang="vi">Quả vải</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="819" height="834" src="Images/lychee-2d.jpg" alt="Lychee: X-ray projection" data-alt-en="Lychee: X-ray projection" data-alt-vi="Quả vải: Ảnh chiếu X-quang" loading="lazy"><span class="tag">2D</span>
+        <figcaption><span lang="en">X-ray projection</span><span lang="vi">Ảnh chiếu X-quang</span></figcaption></figure>
+      <figure class="shot contain"><img width="903" height="958" src="Images/lychee-slice.jpg" alt="Lychee: High-resolution virtual slice" data-alt-en="Lychee: High-resolution virtual slice" data-alt-vi="Quả vải: Lát cắt ảo độ phân giải cao" loading="lazy"><span class="tag">2D</span>
+        <figcaption><span lang="en">High-resolution virtual slice</span><span lang="vi">Lát cắt ảo độ phân giải cao</span></figcaption></figure>
+      <figure class="shot contain"><img width="832" height="832" src="Images/res-lychee-3d.jpg" alt="Lychee: 3D surface reconstruction" data-alt-en="Lychee: 3D surface reconstruction" data-alt-vi="Quả vải: Tái tạo bề mặt 3D" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">3D surface reconstruction</span><span lang="vi">Tái tạo bề mặt 3D</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">Skin, flesh and seed clearly separated.</p><p lang="vi">Vỏ, cùi và hạt được phân biệt rõ ràng.</p></div>
+  </article>
+</div>
+<div class="cat" id="materials" data-cat="materials">
+  <div class="cat-head reveal">
+    <span class="cat-num">04</span>
+    <div><h2><span lang="en">Materials &amp; natural samples</span><span lang="vi">Vật liệu &amp; mẫu tự nhiên</span></h2>
+    <p lang="en">From gemstones to delicate plants: shape, surface and inner structure in full 3D.</p><p lang="vi">Từ đá quý đến thực vật mỏng manh: hình dạng, bề mặt và cấu trúc bên trong ở dạng 3D hoàn chỉnh.</p></div>
+  </div>
+  <article class="case reveal" id="diamond">
+    <div class="case-head">
+      <h3><span lang="en">Diamond</span><span lang="vi">Kim cương</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="796" height="804" src="Images/res-diamond-top.jpg" alt="Diamond: Top view: the table facet" data-alt-en="Diamond: Top view: the table facet" data-alt-vi="Kim cương: Nhìn từ trên: mặt bàn" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Top view: the table facet</span><span lang="vi">Nhìn từ trên: mặt bàn</span></figcaption></figure>
+      <figure class="shot contain"><img width="948" height="631" src="Images/res-diamond-side.jpg" alt="Diamond: Side view" data-alt-en="Diamond: Side view" data-alt-vi="Kim cương: Nhìn ngang" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Side view</span><span lang="vi">Nhìn ngang</span></figcaption></figure>
+      <figure class="shot contain"><img width="879" height="768" src="Images/res-diamond-pavilion.jpg" alt="Diamond: The pavilion, seen from below" data-alt-en="Diamond: The pavilion, seen from below" data-alt-vi="Kim cương: Phần đáy nhìn từ dưới lên" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">The pavilion, seen from below</span><span lang="vi">Phần đáy nhìn từ dưới lên</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">A cut stone with every facet of crown and pavilion captured in 3D.</p><p lang="vi">Một viên đá đã cắt với từng mặt cắt của phần vương miện và phần đáy được ghi lại ở dạng 3D.</p></div>
+  </article>
+  <article class="case reveal" id="rose">
+    <div class="case-head">
+      <h3><span lang="en">Rose</span><span lang="vi">Hoa hồng</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="1118" height="977" src="Images/res-rose-side.jpg" alt="Rose: Side view" data-alt-en="Rose: Side view" data-alt-vi="Hoa hồng: Nhìn ngang" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Side view</span><span lang="vi">Nhìn ngang</span></figcaption></figure>
+      <figure class="shot contain"><img width="944" height="937" src="Images/res-rose-top.jpg" alt="Rose: Top view: the folded petals" data-alt-en="Rose: Top view: the folded petals" data-alt-vi="Hoa hồng: Nhìn từ trên: các cánh hoa xếp lớp" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Top view: the folded petals</span><span lang="vi">Nhìn từ trên: các cánh hoa xếp lớp</span></figcaption></figure>
+      <figure class="shot contain"><img width="678" height="906" src="Images/res-rose-cut.jpg" alt="Rose: Virtual cut through the flower head" data-alt-en="Rose: Virtual cut through the flower head" data-alt-vi="Hoa hồng: Lát cắt ảo qua bông hoa" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Virtual cut through the flower head</span><span lang="vi">Lát cắt ảo qua bông hoa</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">Dozens of folded petals, captured without flattening or sectioning the flower.</p><p lang="vi">Hàng chục cánh hoa xếp lớp được ghi lại mà không cần ép dẹt hay cắt lát bông hoa.</p></div>
+  </article>
+  <article class="case reveal" id="flower">
+    <div class="case-head">
+      <h3><span lang="en">Passion flower</span><span lang="vi">Hoa chanh dây</span></h3>
+    </div>
+    <div class="gallery cols-3">
+      <figure class="shot contain"><img width="1200" height="1200" src="Images/res-flower-a.jpg" alt="Passion flower: 3D reconstruction" data-alt-en="Passion flower: 3D reconstruction" data-alt-vi="Hoa chanh dây: Tái tạo 3D" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">3D reconstruction</span><span lang="vi">Tái tạo 3D</span></figcaption></figure>
+      <figure class="shot contain"><img width="1077" height="1077" src="Images/res-flower-b.jpg" alt="Passion flower: Side view" data-alt-en="Passion flower: Side view" data-alt-vi="Hoa chanh dây: Nhìn ngang" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Side view</span><span lang="vi">Nhìn ngang</span></figcaption></figure>
+      <figure class="shot contain"><img width="1200" height="746" src="Images/res-flower-cut.jpg" alt="Passion flower: Virtual cut through the flower" data-alt-en="Passion flower: Virtual cut through the flower" data-alt-vi="Hoa chanh dây: Lát cắt ảo qua bông hoa" loading="lazy"><span class="tag">3D</span>
+        <figcaption><span lang="en">Virtual cut through the flower</span><span lang="vi">Lát cắt ảo qua bông hoa</span></figcaption></figure>
+    </div>
+    <div class="case-text"><p lang="en">The fine filaments and petals in their natural shape.</p><p lang="vi">Các sợi tua và cánh hoa mảnh ở hình dạng tự nhiên.</p></div>
+  </article>
+</div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span lang="en">Curious what your sample looks like inside?</span><span lang="vi">Bạn muốn biết bên trong mẫu vật của mình trông như thế nào?</span></h2>
+        <p lang="en">Tell us about your material, size and the details you need to see. We will tell you what the XRM-131 can reveal.</p>
+        <p lang="vi">Hãy cho chúng tôi biết về vật liệu, kích thước và những chi tiết bạn cần quan sát. Chúng tôi sẽ tư vấn những gì XRM-131 có thể làm rõ.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html"><span lang="en">Contact us</span><span lang="vi">Liên hệ với chúng tôi</span></a>
+    </div>
+  </div>
+</section>
+</main>
 
 <div id="footer"></div>
 
-<script>
-  async function loadPartial(id, file) {
-    const el = document.getElementById(id);
-    if (el) {
-      const res = await fetch(file);
-      el.innerHTML = await res.text();
-    }
-  }
-  loadPartial('header', 'header.html');
-  loadPartial('footer', 'footer.html');
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>

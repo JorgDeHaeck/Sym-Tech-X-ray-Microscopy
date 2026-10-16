@@ -1,20 +1,26 @@
-<header>
+<header class="site-header">
   <div class="nav-container">
-    <div class="logo">
-      <img src="Images/LOGO.PNG" alt="Sym-Tech Logo" height="50">
-    </div>
+    <a class="logo" href="index.html" aria-label="Sym-Tech home">
+      <img src="Images/logo.png" alt="Sym-Tech logo" width="56" height="46">
+    </a>
 
-    <!-- Hamburger menu toggle for mobile -->
-    <div class="menu-toggle" onclick="this.classList.toggle('open'); document.querySelector('nav').classList.toggle('open');">
-      ☰
-    </div>
-
-    <nav>
-      <a href="index.html">Trang Chủ</a>
-      <a href="products.html">Sản Phẩm</a>
-      <a href="applications.html">Kết quả quét</a>
-      <a href="contact.html">Liên Hệ</a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html"><span lang="en">Home</span><span lang="vi">Trang chủ</span></a>
+      <a href="products.html"><span lang="en">Product</span><span lang="vi">Sản phẩm</span></a>
+      <a href="applications.html"><span lang="en">Scan results</span><span lang="vi">Kết quả quét</span></a>
+      <a href="scan-of-the-month.html"><span lang="en">Scan of the month</span><span lang="vi">Mẫu quét của tháng</span></a>
+      <a href="contact.html"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
     </nav>
+
+    <!-- Language switch (top right) -->
+    <div class="lang-switch" role="group" aria-label="Language / Ngôn ngữ">
+      <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      <button type="button" data-set-lang="vi" aria-pressed="false" title="Tiếng Việt">VI</button>
+    </div>
+
+    <!-- Hamburger menu for mobile -->
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-controls="main-nav" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
-

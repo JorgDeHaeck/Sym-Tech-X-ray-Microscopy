@@ -1,54 +1,331 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D X-ray Microscopy</title>
-  <!-- Load Inter font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-
+  <title data-en="Sym-Tech | Compact 3D X-ray Microscopy" data-vi="Sym-Tech | Kính hiển vi X-quang 3D nhỏ gọn">Sym-Tech | Compact 3D X-ray Microscopy</title>
+  <meta name="description" content="Sym-Tech Vietnam develops compact, affordable 3D X-ray microscopes (micro-CT) for non-destructive inspection in research and industry."
+        data-en="Sym-Tech Vietnam develops compact, affordable 3D X-ray microscopes (micro-CT) for non-destructive inspection in research and industry."
+        data-vi="Sym-Tech Việt Nam phát triển kính hiển vi X-quang 3D (micro-CT) nhỏ gọn, chi phí hợp lý cho kiểm tra không phá hủy trong nghiên cứu và công nghiệp.">
+  <link rel="icon" href="Images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <!-- choose language before the page is drawn: ?lang= → saved choice → browser language -->
+  <script>(function(){var l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('symtech-lang')}catch(e){}if(l!=='en'&&l!=='vi'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-lang',l)})();</script>
 </head>
 <body>
 
 <div id="header"></div>
 
+<main>
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="hero-text">
-    <h1></h1>
-    <h2></h2>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow"><span lang="en">Compact 3D X-ray microscopy</span><span lang="vi">Kính hiển vi X-quang 3D nhỏ gọn</span></span>
+      <h1>
+        <span lang="en">See the <span class="accent">invisible</span>.</span>
+        <span lang="vi">Nhìn thấu <span class="accent">bên trong</span>.</span>
+      </h1>
+      <p class="lead" lang="en">Sym-Tech builds compact, affordable X-ray micro-CT systems that reveal the internal structure of your samples in full 3D — at micrometre scale, without cutting, breaking or altering them.</p>
+      <p class="lead" lang="vi">Sym-Tech phát triển các hệ thống micro-CT X-quang nhỏ gọn, chi phí hợp lý, giúp hiển thị toàn bộ cấu trúc bên trong mẫu vật dưới dạng 3D — ở cấp độ micromet, không cần cắt, phá vỡ hay làm thay đổi mẫu.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="products.html"><span lang="en">Discover the XRM-131</span><span lang="vi">Khám phá XRM-131</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="applications.html"><span lang="en">View scan results</span><span lang="vi">Xem kết quả quét</span></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>50 µm</strong><span lang="en">resolution</span><span lang="vi">độ phân giải</span></div>
+        <div><strong>80 keV</strong><span lang="en">X-ray energy</span><span lang="vi">năng lượng tia X</span></div>
+        <div><strong>100 mm</strong><span lang="en">scan area</span><span lang="vi">vùng quét</span></div>
+      </div>
+    </div>
+
+    <!-- Illustration: cone-beam CT principle (source → rotating sample → detector) -->
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="beam" x1="0" x2="1">
+            <stop offset="0" stop-color="#c49af0" stop-opacity=".55"/>
+            <stop offset=".45" stop-color="#4fd6d6" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#4fd6d6" stop-opacity=".06"/>
+          </linearGradient>
+          <radialGradient id="glow">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset=".35" stop-color="#e2c8ff"/>
+            <stop offset="1" stop-color="#9b5fd0" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="panel" x1="0" x2="1">
+            <stop offset="0" stop-color="#14495a"/>
+            <stop offset="1" stop-color="#0d2f3c"/>
+          </linearGradient>
+          <clipPath id="panelClip"><polygon points="548,40 632,76 632,384 548,420"/></clipPath>
+          <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+
+        <!-- X-ray cone beam -->
+        <polygon points="132,230 548,40 548,420" fill="url(#beam)"/>
+        <g class="beam-rays" stroke="#8fe9e9" stroke-opacity=".35" stroke-width="1.2">
+          <line x1="132" y1="230" x2="548" y2="86"/>
+          <line x1="132" y1="230" x2="548" y2="157"/>
+          <line x1="132" y1="230" x2="548" y2="230"/>
+          <line x1="132" y1="230" x2="548" y2="303"/>
+          <line x1="132" y1="230" x2="548" y2="374"/>
+        </g>
+
+        <!-- X-ray source (tube) -->
+        <rect x="30" y="196" width="96" height="68" rx="12" fill="#163f4f" stroke="#2f7a8c"/>
+        <rect x="44" y="210" width="50" height="40" rx="6" fill="#0d2f3c"/>
+        <circle cx="132" cy="230" r="26" fill="url(#glow)" class="focal-glow"/>
+        <circle cx="132" cy="230" r="4" fill="#fff"/>
+
+        <!-- Rotation stage + sample -->
+        <ellipse cx="330" cy="330" rx="92" ry="20" fill="#0d2f3c" stroke="#2f7a8c"/>
+        <ellipse cx="330" cy="330" rx="112" ry="28" fill="none" stroke="#4fd6d6" stroke-width="2" stroke-dasharray="10 12" class="turn"/>
+        <path d="M436 322 l12 8 -14 4" fill="none" stroke="#4fd6d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <ellipse cx="330" cy="236" rx="80" ry="90" fill="#4fd6d6" opacity=".18" filter="url(#soft)"/>
+        <image href="Images/egg-sample.webp" x="274" y="134" width="112" height="182"/>
+
+        <!-- Flat-panel detector with a live projection -->
+        <polygon points="548,40 632,76 632,384 548,420" fill="url(#panel)" stroke="#3aa6b8"/>
+        <g clip-path="url(#panelClip)">
+          <image href="Images/egg-projection.webp" x="551" y="92" width="78" height="276" preserveAspectRatio="none" opacity=".95"/>
+          <rect class="scan-line" x="548" y="60" width="84" height="4" fill="#8fe9e9" opacity=".8"/>
+        </g>
+
+        <!-- labels -->
+        <g font-family="Be Vietnam Pro, Arial, sans-serif" font-size="13" fill="#bfe9ee" letter-spacing=".5">
+          <text x="30" y="290" lang="en">X-ray source</text><text x="30" y="290" lang="vi">Nguồn tia X</text>
+          <text x="282" y="384" lang="en">Rotating sample</text><text x="290" y="384" lang="vi">Mẫu xoay 360°</text>
+          <text x="548" y="438" lang="en">Detector</text><text x="548" y="438" lang="vi">Đầu thu</text>
+        </g>
+      </svg>
+    </div>
   </div>
 </section>
 
-<section id="home">
-  <h2>Chào mừng đến với Sym-Tech</h2>
-
-  <p>
-    Sym-Tech kết hợp chuyên môn kỹ thuật từ châu Âu với hệ sinh thái đổi mới tại Việt Nam để phát triển thế hệ thiết bị chụp ảnh khoa học tiên tiến mới.
-  </p>
-
-  <p>
-    Chúng tôi đang phát triển một hệ thống chụp X-quang nhỏ gọn, được thiết kế cho việc kiểm tra và phân tích độ phân giải cao các mẫu vật có kích thước nhỏ đến trung bình trong các ứng dụng công nghiệp và khoa học.
-  </p>
-
-  <p>
-    Chúng tôi tập trung vào việc xây dựng các hệ thống hình ảnh và phân tích hiện đại phục vụ nghiên cứu và ứng dụng công nghiệp tại thị trường châu Á, với sản phẩm đầu tiên dự kiến ra mắt trong vòng một năm tới.
-  </p>
+<!-- ================= ABOUT ================= -->
+<section class="section">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow"><span lang="en">About Sym-Tech</span><span lang="vi">Về Sym-Tech</span></span>
+      <h2><span lang="en">European engineering, developed in Vietnam</span><span lang="vi">Kỹ thuật châu Âu, phát triển tại Việt Nam</span></h2>
+      <div lang="en">
+        <p>Sym-Tech combines European engineering expertise with Vietnam's innovation ecosystem to develop a new generation of scientific imaging equipment.</p>
+        <p>High-resolution X-ray CT systems are usually expensive, complex to operate and out of reach for many laboratories and production sites. At the same time, demand for precise 3D internal inspection is growing quickly in materials science, electronics and advanced manufacturing.</p>
+        <p>Our answer is a compact, easy-to-use X-ray microscope for small and medium-sized objects — designed for research institutes, universities and industry in Vietnam and across Asia.</p>
+      </div>
+      <div lang="vi">
+        <p>Sym-Tech kết hợp chuyên môn kỹ thuật từ châu Âu với hệ sinh thái đổi mới sáng tạo tại Việt Nam để phát triển thế hệ thiết bị hình ảnh khoa học mới.</p>
+        <p>Các hệ thống CT X-quang độ phân giải cao thường có giá thành cao, vận hành phức tạp và nằm ngoài tầm với của nhiều phòng thí nghiệm và cơ sở sản xuất. Trong khi đó, nhu cầu kiểm tra cấu trúc bên trong 3D chính xác đang tăng nhanh trong khoa học vật liệu, điện tử và sản xuất tiên tiến.</p>
+        <p>Giải pháp của chúng tôi là một kính hiển vi X-quang nhỏ gọn, dễ sử dụng cho các mẫu vật có kích thước nhỏ và trung bình — được thiết kế cho viện nghiên cứu, trường đại học và doanh nghiệp tại Việt Nam và khu vực châu Á.</p>
+      </div>
+    </div>
+    <div class="reveal about-visual">
+      <div class="reveal-single">
+        <!-- 3D reveal: three renderings of the same scan, cross-fading in a loop (CSS only) -->
+        <figure class="reveal-anim" aria-label="3D reconstruction of a chocolate surprise egg, virtually opened step by step">
+          <div class="reveal-frames">
+            <img width="640" height="833" src="Images/egg-reveal-1.jpg" alt="3D reconstruction: the sealed egg" data-alt-en="3D reconstruction: the sealed egg" data-alt-vi="Ảnh tái tạo 3D: quả trứng còn nguyên" loading="lazy">
+            <img width="640" height="833" src="Images/egg-reveal-2.jpg" alt="3D reconstruction: virtually cut open, the capsule inside" data-alt-en="3D reconstruction: virtually cut open, the capsule inside" data-alt-vi="Ảnh tái tạo 3D: cắt mở ảo, viên nang bên trong" loading="lazy">
+            <img width="640" height="833" src="Images/egg-reveal-3.jpg" alt="3D reconstruction: the toy inside the capsule" data-alt-en="3D reconstruction: the toy inside the capsule" data-alt-vi="Ảnh tái tạo 3D: món đồ chơi trong viên nang" loading="lazy">
+            <span class="tag">3D</span>
+          </div>
+          <figcaption><span lang="en">Chocolate surprise egg</span><span lang="vi">Trứng sô-cô-la bất ngờ</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- ================= BENEFITS ================= -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span lang="en">Why X-ray microscopy</span><span lang="vi">Vì sao chọn kính hiển vi X-quang</span></span>
+      <h2><span lang="en">Look inside — without opening anything</span><span lang="vi">Quan sát bên trong — không cần mở mẫu</span></h2>
+      <p class="lead" lang="en">X-ray microscopy turns hundreds of X-ray images into a complete 3D model of your sample, inside and out.</p>
+      <p class="lead" lang="vi">Kính hiển vi X-quang chuyển hàng trăm ảnh X-quang thành một mô hình 3D hoàn chỉnh của mẫu, cả bên trong lẫn bên ngoài.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 4-3.5 7-8 8-4.5-1-8-4-8-8V7z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <h3><span lang="en">Non-destructive</span><span lang="vi">Không phá hủy</span></h3>
+        <p lang="en">Your sample stays intact. Scan it again, test it further or return it to production.</p>
+        <p lang="vi">Mẫu được giữ nguyên vẹn, có thể quét lại, thử nghiệm tiếp hoặc đưa trở lại sản xuất.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></div>
+        <h3><span lang="en">True 3D</span><span lang="vi">3D thực sự</span></h3>
+        <p lang="en">Explore any virtual cross-section, from any angle, and measure features in three dimensions.</p>
+        <p lang="vi">Quan sát mọi lát cắt ảo theo bất kỳ hướng nào và đo đạc các đặc điểm trong không gian ba chiều.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11h6M11 8v6"/></svg></div>
+        <h3><span lang="en">Micrometre detail</span><span lang="vi">Chi tiết cấp micromet</span></h3>
+        <p lang="en">Reveal cracks, pores, inclusions and assembly faults down to tens of micrometres.</p>
+        <p lang="vi">Phát hiện vết nứt, lỗ rỗng, tạp chất và lỗi lắp ráp đến kích thước vài chục micromet.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 14h3"/></svg></div>
+        <h3><span lang="en">Compact &amp; accessible</span><span lang="vi">Nhỏ gọn &amp; dễ tiếp cận</span></h3>
+        <p lang="en">A cabinet-sized system that is easy to install and operate, at a fraction of the usual cost.</p>
+        <p lang="vi">Hệ thống cỡ tủ, dễ lắp đặt và vận hành, với chi phí thấp hơn nhiều so với các giải pháp thông thường.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span lang="en">How it works</span><span lang="vi">Nguyên lý hoạt động</span></span>
+      <h2><span lang="en">From sample to 3D insight in four steps</span><span lang="vi">Từ mẫu vật đến dữ liệu 3D qua bốn bước</span></h2>
+    </div>
+    <div class="grid grid-4 steps">
+      <div class="step reveal">
+        <div class="step-art"><svg viewBox="0 0 120 90"><rect x="20" y="62" width="80" height="10" rx="3" fill="#0f3a4a"/><rect x="50" y="52" width="20" height="10" fill="#2f7a8c"/><path d="M60 14c14 0 20 12 20 22s-8 16-20 16-20-6-20-16 6-22 20-22z" fill="#0aa5a5" opacity=".85"/><path d="M60 4v8" stroke="#9b5fd0" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <span class="step-num">1</span>
+        <h3><span lang="en">Mount the sample</span><span lang="vi">Đặt mẫu</span></h3>
+        <p lang="en">The object is placed on a precision rotation stage inside the shielded cabinet. No preparation, cutting or coating is needed.</p>
+        <p lang="vi">Mẫu được đặt lên bàn xoay chính xác bên trong buồng che chắn. Không cần chuẩn bị, cắt hay phủ mẫu.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-art"><svg viewBox="0 0 120 90"><circle cx="14" cy="45" r="6" fill="#9b5fd0"/><polygon points="14,45 104,10 104,80" fill="#0aa5a5" opacity=".25"/><circle cx="58" cy="45" r="12" fill="#0aa5a5"/><path d="M42 66a22 8 0 1 0 32 0" fill="none" stroke="#0f3a4a" stroke-width="2.5" stroke-linecap="round"/><path d="M74 66l-1-6M74 66l-6 1" stroke="#0f3a4a" stroke-width="2.5" stroke-linecap="round"/><rect x="104" y="10" width="6" height="70" fill="#0f3a4a"/></svg></div>
+        <span class="step-num">2</span>
+        <h3><span lang="en">Acquire projections</span><span lang="vi">Thu nhận ảnh chiếu</span></h3>
+        <p lang="en">While the sample turns 360°, the detector records hundreds of 2D X-ray images from different angles.</p>
+        <p lang="vi">Trong khi mẫu xoay 360°, đầu thu ghi lại hàng trăm ảnh X-quang 2D từ nhiều góc khác nhau.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-art"><svg viewBox="0 0 120 90"><g fill="#0aa5a5"><rect x="30" y="18" width="16" height="16" opacity=".35"/><rect x="48" y="18" width="16" height="16" opacity=".7"/><rect x="66" y="18" width="16" height="16" opacity=".5"/><rect x="30" y="36" width="16" height="16" opacity=".8"/><rect x="48" y="36" width="16" height="16"/><rect x="66" y="36" width="16" height="16" opacity=".6"/><rect x="30" y="54" width="16" height="16" opacity=".5"/><rect x="48" y="54" width="16" height="16" opacity=".75"/><rect x="66" y="54" width="16" height="16" opacity=".3"/></g><rect x="84" y="18" width="10" height="52" fill="#9b5fd0" opacity=".5"/></svg></div>
+        <span class="step-num">3</span>
+        <h3><span lang="en">Reconstruct in 3D</span><span lang="vi">Tái tạo 3D</span></h3>
+        <p lang="en">Reconstruction software combines all projections into a 3D volume made of millions of voxels (3D pixels).</p>
+        <p lang="vi">Phần mềm tái tạo kết hợp toàn bộ ảnh chiếu thành một khối 3D gồm hàng triệu voxel (điểm ảnh 3D).</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-art"><svg viewBox="0 0 120 90"><path d="M60 12c18 0 26 14 26 28s-11 24-26 24-26-10-26-24 8-28 26-28z" fill="none" stroke="#0f3a4a" stroke-width="2.5"/><circle cx="52" cy="34" r="5" fill="#9b5fd0"/><circle cx="68" cy="48" r="3.5" fill="#9b5fd0"/><circle cx="58" cy="54" r="2.5" fill="#9b5fd0"/><path d="M34 76h52M34 72v8M86 72v8" stroke="#0aa5a5" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+        <span class="step-num">4</span>
+        <h3><span lang="en">Analyse</span><span lang="vi">Phân tích</span></h3>
+        <p lang="en">Slice, segment and measure: detect defects, quantify porosity and check dimensions and assembly.</p>
+        <p lang="vi">Cắt lớp, phân vùng và đo đạc: phát hiện khuyết tật, định lượng độ xốp, kiểm tra kích thước và lắp ráp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT TEASER ================= -->
+<section class="section alt">
+  <div class="container split">
+    <div class="figure-frame reveal">
+      <picture><source srcset="Images/xrm-131.webp" type="image/webp"><img width="1600" height="919" src="Images/xrm-131.jpg" alt="Sym-Tech XRM-131 3D X-ray microscope" data-alt-en="Sym-Tech XRM-131 3D X-ray microscope" data-alt-vi="Kính hiển vi X-quang 3D XRM-131 của Sym-Tech" loading="lazy"></picture>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow"><span lang="en">Our first system</span><span lang="vi">Hệ thống đầu tiên</span></span>
+      <h2>XRM-131 <span class="badge"><span lang="en">Preliminary</span><span lang="vi">Sơ bộ</span></span></h2>
+      <p lang="en">A scientific-grade 3D X-ray microscope in a compact cabinet. The XRM-131 uses geometric magnification to adapt resolution to your sample, and comes with a free software package for reconstruction and visualisation.</p>
+      <p lang="vi">Kính hiển vi X-quang 3D đạt chuẩn khoa học trong một buồng máy nhỏ gọn. XRM-131 sử dụng phóng đại hình học để điều chỉnh độ phân giải theo từng mẫu, kèm theo gói phần mềm miễn phí cho tái tạo và hiển thị hình ảnh.</p>
+      <ul class="checks">
+        <li><span lang="en">Minimum voxel size 20–55 µm</span><span lang="vi">Kích thước voxel tối thiểu 20–55 µm</span></li>
+        <li><span lang="en">Scan area ∅30–100 mm</span><span lang="vi">Vùng quét ∅30–100 mm</span></li>
+        <li><span lang="en">Autonomous safety interlock</span><span lang="vi">Khóa liên động an toàn tự động</span></li>
+      </ul>
+      <a class="btn btn-outline" href="products.html"><span lang="en">Full specifications</span><span lang="vi">Xem thông số kỹ thuật</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCAN OF THE MONTH (content comes from scans.js) ================= -->
+<section class="section sotw-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span lang="en">Scan of the month</span><span lang="vi">Mẫu quét của tháng</span></span>
+      <h2><span lang="en">Fresh from our scanner</span><span lang="vi">Mới nhất từ máy quét của chúng tôi</span></h2>
+      <p class="lead" lang="en">Every month we scan a new object with our prototype and share the result — an easy way to see what 3D X-ray microscopy can reveal.</p>
+      <p class="lead" lang="vi">Mỗi tháng, chúng tôi quét một vật mẫu mới bằng nguyên mẫu của mình và chia sẻ kết quả — cách đơn giản để thấy kính hiển vi X-quang 3D có thể khám phá những gì.</p>
+    </div>
+    <div class="sotw-teaser reveal" id="sotw-teaser"></div>
+  </div>
+</section>
+
+<!-- ================= APPLICATION FIELDS ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span lang="en">Applications</span><span lang="vi">Ứng dụng</span></span>
+      <h2><span lang="en">One instrument, many fields</span><span lang="vi">Một thiết bị, nhiều lĩnh vực</span></h2>
+      <p class="lead" lang="en">Wherever the inside of an object matters, X-ray microscopy gives answers that a surface view cannot.</p>
+      <p class="lead" lang="vi">Ở bất cứ nơi nào cấu trúc bên trong của vật thể là quan trọng, kính hiển vi X-quang mang lại câu trả lời mà quan sát bề mặt không thể có.</p>
+    </div>
+    <div class="fields reveal">
+      <span class="field"><i></i><span lang="en">Materials science &amp; composites</span><span lang="vi">Khoa học vật liệu &amp; composite</span></span>
+      <span class="field"><i></i><span lang="en">Electronics &amp; components</span><span lang="vi">Điện tử &amp; linh kiện</span></span>
+      <span class="field"><i></i><span lang="en">Additive manufacturing &amp; casting</span><span lang="vi">In 3D &amp; đúc kim loại</span></span>
+      <span class="field"><i></i><span lang="en">Plastics &amp; moulded parts</span><span lang="vi">Nhựa &amp; chi tiết đúc khuôn</span></span>
+      <span class="field"><i></i><span lang="en">Food &amp; agriculture</span><span lang="vi">Thực phẩm &amp; nông nghiệp</span></span>
+      <span class="field"><i></i><span lang="en">Biology &amp; botany</span><span lang="vi">Sinh học &amp; thực vật học</span></span>
+      <span class="field"><i></i><span lang="en">Geology &amp; gemstones</span><span lang="vi">Địa chất &amp; đá quý</span></span>
+      <span class="field"><i></i><span lang="en">Education &amp; research</span><span lang="vi">Giáo dục &amp; nghiên cứu</span></span>
+    </div>
+
+    <div class="gallery home-cats" style="margin-top:48px">
+      <a class="cat-card reveal" href="applications.html#plastics"><figure class="shot contain"><img width="882" height="917" src="Images/res-cube-inside.jpg" alt="Puzzle cube, virtual cut through the mechanism" data-alt-en="Puzzle cube, virtual cut through the mechanism" data-alt-vi="Khối rubik, lát cắt ảo qua cơ cấu" loading="lazy"><span class="tag" lang="en">PLASTICS</span><span class="tag" lang="vi">NHỰA</span>
+        <figcaption><span lang="en">Plastics &amp; assemblies — puzzle cube, virtual cut</span><span lang="vi">Nhựa &amp; cụm lắp ráp — khối rubik, lát cắt ảo</span></figcaption></figure></a>
+      <a class="cat-card reveal" href="applications.html#pharma"><figure class="shot contain"><img width="772" height="918" src="Images/res-blister-see.jpg" alt="Tablets inside a sealed blister pack" data-alt-en="Tablets inside a sealed blister pack" data-alt-vi="Viên thuốc bên trong vỉ thuốc kín" loading="lazy"><span class="tag" lang="en">PHARMA</span><span class="tag" lang="vi">DƯỢC PHẨM</span>
+        <figcaption><span lang="en">Pharma &amp; packaging — tablets inside a sealed blister</span><span lang="vi">Dược phẩm &amp; bao bì — viên thuốc trong vỉ kín</span></figcaption></figure></a>
+      <a class="cat-card reveal" href="applications.html#food"><figure class="shot contain"><img width="1009" height="905" src="Images/res-apple-half.jpg" alt="Apple, virtual cut through the core" data-alt-en="Apple, virtual cut through the core" data-alt-vi="Quả táo, lát cắt ảo qua lõi" loading="lazy"><span class="tag" lang="en">FOOD</span><span class="tag" lang="vi">THỰC PHẨM</span>
+        <figcaption><span lang="en">Food &amp; agriculture — apple, cut through the core</span><span lang="vi">Thực phẩm &amp; nông sản — quả táo, cắt qua lõi</span></figcaption></figure></a>
+      <a class="cat-card reveal" href="applications.html#materials"><figure class="shot contain"><img width="1200" height="1200" src="Images/res-flower-a.jpg" alt="Passion flower in 3D" data-alt-en="Passion flower in 3D" data-alt-vi="Hoa chanh dây dạng 3D" loading="lazy"><span class="tag" lang="en">NATURE</span><span class="tag" lang="vi">TỰ NHIÊN</span>
+        <figcaption><span lang="en">Materials &amp; natural samples — passion flower</span><span lang="vi">Vật liệu &amp; mẫu tự nhiên — hoa chanh dây</span></figcaption></figure></a>
+    </div>
+    <p style="margin-top:28px"><a class="btn btn-outline" href="applications.html"><span lang="en">See all scan results</span><span lang="vi">Xem tất cả kết quả quét</span></a></p>
+  </div>
+</section>
+
+<!-- ================= STATUS ================= -->
+<section class="section alt">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow"><span lang="en">Where we are</span><span lang="vi">Tiến độ phát triển</span></span>
+      <h2><span lang="en">A start-up with a working system</span><span lang="vi">Một công ty khởi nghiệp với hệ thống đã hoạt động</span></h2>
+      <p lang="en">Sym-Tech is in its start-up phase. Our prototype produces the scan results shown on this website, and we are now preparing the XRM-131 for its first users in research and industry.</p>
+      <p lang="vi">Sym-Tech đang trong giai đoạn khởi nghiệp. Nguyên mẫu của chúng tôi đã tạo ra các kết quả quét được giới thiệu trên trang web này, và hiện chúng tôi đang chuẩn bị đưa XRM-131 đến những người dùng đầu tiên trong nghiên cứu và công nghiệp.</p>
+    </div>
+    <ul class="timeline reveal">
+      <li class="done"><strong><span lang="en">Working prototype completed</span><span lang="vi">Hoàn thành nguyên mẫu hoạt động</span></strong>
+        <span lang="en">First 3D scans of real samples.</span><span lang="vi">Những bản quét 3D đầu tiên trên mẫu thực.</span></li>
+      <li class="done"><strong><span lang="en">Imaging chain validated</span><span lang="vi">Xác thực chuỗi tạo ảnh</span></strong>
+        <span lang="en">System architecture, acquisition and reconstruction proven.</span><span lang="vi">Kiến trúc hệ thống, thu nhận và tái tạo ảnh đã được kiểm chứng.</span></li>
+      <li class="now"><strong><span lang="en">XRM-131: towards industrial-grade reliability</span><span lang="vi">XRM-131: hướng tới độ tin cậy cấp công nghiệp</span></strong>
+        <span lang="en">Ongoing optimisation of the first product.</span><span lang="vi">Đang tiếp tục tối ưu hóa sản phẩm đầu tiên.</span></li>
+      <li class="now"><strong><span lang="en">Early commercialisation</span><span lang="vi">Giai đoạn đầu thương mại hóa</span></strong>
+        <span lang="en">Building relationships with first users and partners.</span><span lang="vi">Xây dựng quan hệ với người dùng và đối tác đầu tiên.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span lang="en">Have a sample in mind?</span><span lang="vi">Bạn có mẫu vật cần kiểm tra?</span></h2>
+        <p lang="en">Tell us what you would like to see inside. We are happy to discuss your samples, resolution needs and applications.</p>
+        <p lang="vi">Hãy cho chúng tôi biết bạn muốn quan sát điều gì bên trong. Chúng tôi sẵn sàng trao đổi về mẫu vật, yêu cầu độ phân giải và ứng dụng của bạn.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html"><span lang="en">Contact us</span><span lang="vi">Liên hệ với chúng tôi</span></a>
+    </div>
+  </div>
+</section>
+</main>
 
 <div id="footer"></div>
 
-<script>
-  async function loadPartial(id, file) {
-    const el = document.getElementById(id);
-    if (el) {
-      const res = await fetch(file);
-      el.innerHTML = await res.text();
-    }
-  }
-  loadPartial('header', 'header.html');
-  loadPartial('footer', 'footer.html');
-</script>
-
+<script src="scans.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

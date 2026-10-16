@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Scan of the month | Sym-Tech" data-vi="Mẫu quét của tháng | Sym-Tech">Scan of the month | Sym-Tech</title>
+  <meta name="description" content="Every month Sym-Tech scans a new object with its 3D X-ray microscope prototype and shares the result."
+        data-en="Every month Sym-Tech scans a new object with its 3D X-ray microscope prototype and shares the result."
+        data-vi="Mỗi tháng, Sym-Tech quét một vật mẫu mới bằng nguyên mẫu kính hiển vi X-quang 3D và chia sẻ kết quả.">
+  <link rel="icon" href="Images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('symtech-lang')}catch(e){}if(l!=='en'&&l!=='vi'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-lang',l)})();</script>
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow"><span lang="en">Scan of the month</span><span lang="vi">Mẫu quét của tháng</span></span>
+    <h1><span lang="en">A new look inside, every month</span><span lang="vi">Mỗi tháng, một góc nhìn mới vào bên trong</span></h1>
+    <p class="lead" lang="en">Each month we place a new object in our XRM prototype — food, plants, packaging, everyday products — and show what the 3D reconstruction reveals, zooming in on the details that matter. All images are original Sym-Tech scans.</p>
+    <p class="lead" lang="vi">Mỗi tháng, chúng tôi đặt một vật mẫu mới vào nguyên mẫu XRM — thực phẩm, thực vật, bao bì, sản phẩm thường ngày — và giới thiệu những gì ảnh tái tạo 3D cho thấy, phóng to vào những chi tiết quan trọng. Tất cả hình ảnh đều là bản quét gốc của Sym-Tech.</p>
+  </div>
+</section>
+
+<!-- Featured scan: filled in from scans.js -->
+<section class="section" id="feature">
+  <div class="container">
+    <article class="sotw-feature" id="sotw-feature">
+      <noscript><p>Please enable JavaScript to see the scan of the month. / Vui lòng bật JavaScript để xem mẫu quét của tháng.</p></noscript>
+    </article>
+  </div>
+</section>
+
+<!-- Archive: filled in from scans.js (switched off with SCAN_OPTIONS.showArchive in scans.js) -->
+<section class="section alt" id="archive-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span lang="en">Archive</span><span lang="vi">Lưu trữ</span></span>
+      <h2><span lang="en">Earlier scans</span><span lang="vi">Các mẫu quét trước đây</span></h2>
+    </div>
+    <div class="archive-grid" id="sotw-archive"></div>
+  </div>
+</section>
+
+<!-- Invite visitors to suggest a sample -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span lang="en">What should we scan next?</span><span lang="vi">Chúng tôi nên quét gì tiếp theo?</span></h2>
+        <p lang="en">Send us your idea or your own sample. Interesting suggestions may become a future scan of the month.</p>
+        <p lang="vi">Hãy gửi cho chúng tôi ý tưởng hoặc mẫu vật của bạn. Những đề xuất thú vị có thể trở thành mẫu quét của tháng tiếp theo.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html?topic=sample#form"><span lang="en">Suggest a sample</span><span lang="vi">Đề xuất mẫu vật</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+
+<script src="scans.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
