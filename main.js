@@ -40,7 +40,7 @@
 
   /* Version tag of this site release. Change it (here AND in the ?v=... of style.css,
      main.js and scans.js in every .html page) each time a new version is published. */
-  var SITE_VERSION = '20261016c';
+  var SITE_VERSION = '20261104';
 
   /* ---------- Header / footer partials ---------- */
   function loadPartial(id, file) {
@@ -165,7 +165,7 @@
 
   // interactive explorer: numbered points on the main image, zoom + detail panel
   function explorerHtml(s) {
-    var base = s.images[0];
+    var base = s.explore || s.images[0];
     var tabs = '<button type="button" class="ex-tab" data-ex="overview" aria-selected="true">' +
       bi({ en: 'Overview', vi: 'Tổng quan' }) + '</button>' +
       s.features.map(function (f, n) {
@@ -211,8 +211,8 @@
     return '<div class="explorer" id="explorer">' +
       '<div class="ex-tabs" role="tablist">' + tabs + '</div>' +
       '<div class="ex-grid">' +
-        '<div class="ex-stage" data-state="overview">' +
-          '<div class="ex-frame"><img class="ex-base" src="Images/' + esc(base.file) + '" alt="' + esc(base.en) +
+        '<div class="ex-stage' + ((s.exploreLayout || s.layout) ? ' ' + esc(s.exploreLayout || s.layout) : '') + '" data-state="overview">' +
+          '<div class="ex-frame"' + (s.frameRatio ? ' style="aspect-ratio:' + esc(s.frameRatio) + '"' : '') + '><img class="ex-base" src="Images/' + esc(base.file) + '" alt="' + esc(base.en) +
             '" data-alt-en="' + esc(base.en) + '" data-alt-vi="' + esc(base.vi) + '">' + hotspots + '</div>' +
           zooms +
           '<button type="button" class="ex-back" data-ex="overview">&larr; ' + bi({ en: 'Overview', vi: 'Tổng quan' }) + '</button>' +
@@ -271,7 +271,7 @@
     var teaser = document.getElementById('sotw-teaser');
     if (teaser) {
       var s0 = list[0];
-      var thumbs = s0.features ? s0.features.slice(0, 2).map(function (f) { return f.images[0]; }) : s0.images.slice(1, 3);
+      var thumbs = s0.teaser || (s0.features ? s0.features.slice(0, 2).map(function (f) { return f.images[0]; }) : s0.images.slice(1, 3));
       teaser.innerHTML =
         '<div class="sotw-media">' + shot(s0.images[0], 'big') +
           '<div class="sotw-thumbs">' + thumbs.map(function (i) { return shot(i); }).join('') + '</div></div>' +
@@ -291,7 +291,7 @@
       var d = fmtDate(feat.date);
       var isCurrent = feat === list[0];
       var gallery = feat.features
-        ? '<div class="gallery sotw-gallery n2 portrait">' + feat.images.slice(0, 2).map(function (i) { return shot(i); }).join('') + '</div>'
+        ? '<div class="gallery sotw-gallery n2 ' + (feat.layout === 'landscape' ? 'landscape' : 'portrait') + '">' + feat.images.slice(0, 2).map(function (i) { return shot(i); }).join('') + '</div>'
         : '<div class="gallery sotw-gallery n' + Math.min(3, Math.max(1, feat.images.length - 1)) + '">' + feat.images.map(function (i, n) { return shot(i, n === 0 ? 'big' : ''); }).join('') + '</div>';
       box.innerHTML =
         '<div class="sotw-head">' +
@@ -311,7 +311,7 @@
     // scan-of-the-month page: archive (can be switched off in scans.js)
     var arch = document.getElementById('sotw-archive');
     if (arch) {
-      var others = list.filter(function (s) { return s !== feat; });
+      var others = list.filter(function (s) { return s !== feat && (!opts.monthlyOnly || s.month); });
       var section = document.getElementById('archive-section');
       if (opts.showArchive === false || !others.length) {
         if (section) section.hidden = true;

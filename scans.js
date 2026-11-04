@@ -6,10 +6,10 @@
    it is shown as "Scan of the month" on the home page and on
    scan-of-the-month.html. Older entries form the archive.
 
-   ARCHIVE: switched off for now (showArchive: false), because
-   the birthday candle is the first scan of the month. The older
-   weekly scans stay in this file; set showArchive to true to
-   show them again.
+   ARCHIVE: shows the earlier scans of the month (entries with a
+   "month"). The older weekly scans (entries with a "week") stay
+   in this file but are not shown while monthlyOnly is true.
+   Set showArchive to false to hide the archive completely.
 
    For a new entry:
    1. Put the web images (JPG, max 1200 px, white background
@@ -17,6 +17,10 @@
    2. Copy the first block below, paste it at the top and change:
       id, year, month, date, title, summary, story, use,
       settings, images — always both "en" and "vi".
+      For a wide first image add  layout: 'landscape'.
+      The zoom explorer uses the first image, or  explore: {file,en,vi}
+      if given; set  frameRatio: 'width / height'  of that image and,
+      if it is not tall, exploreLayout: 'landscape' or 'square'.
    3. "features" is optional. Each feature gets a numbered
       point on the first image (x / y in % of that image, from
       the top-left corner), a zoom image that fades in after
@@ -24,10 +28,92 @@
       Leave "features" out for a simple gallery.
    ========================================================= */
 window.SCAN_OPTIONS = {
-  showArchive: false
+  showArchive: true,
+  monthlyOnly: true
 };
 
 window.SCANS = [
+  {
+    id: 'walnuts',
+    year: 2026,
+    month: 11,
+    date: '2026-10-28',
+    title: {
+      en: 'Fresh or old? Walnuts seen from the inside',
+      vi: 'Mới hay cũ? Hạt óc chó nhìn từ bên trong'
+    },
+    summary: {
+      en: 'From the outside, a fresh walnut and an old one look almost the same. Inside, the difference is obvious: one kernel fills its shell, the other has dried out and shrunk. We then scanned a whole cup of walnuts and measured every nut separately.',
+      vi: 'Nhìn từ bên ngoài, một hạt óc chó mới và một hạt cũ gần như giống hệt nhau. Bên trong, sự khác biệt rất rõ: một nhân lấp đầy vỏ, nhân kia đã khô và co lại. Sau đó chúng tôi quét cả một cốc óc chó và đo từng hạt riêng biệt.'
+    },
+    story: {
+      en: 'For our second scan of the month we placed two walnuts side by side in the XRM prototype: a good one and an old one. An 8-minute scan was enough to look through both shells at once. From the outside they are hard to tell apart. In the 3D reconstruction, the fresh kernel fills its shell with firm, solid lobes: 60% of the space inside the shell is kernel, 40% is air. The old kernel has dried out into thin, wrinkled layers: only 40% kernel, 60% air. In a second scan we filled a cup with seven walnuts and measured every nut separately. Explore it below.',
+      vi: 'Với mẫu quét thứ hai của tháng, chúng tôi đặt hai hạt óc chó cạnh nhau trong nguyên mẫu XRM: một hạt tốt và một hạt cũ. Chỉ một lần quét 8 phút là đủ để nhìn xuyên qua cả hai lớp vỏ cùng lúc. Nhìn từ bên ngoài, rất khó phân biệt hai hạt. Trong ảnh tái tạo 3D, nhân hạt mới lấp đầy vỏ với các múi chắc và đặc: 60% không gian bên trong vỏ là nhân, 40% là không khí. Nhân hạt cũ đã khô lại thành những lớp mỏng, nhăn nheo: chỉ 40% là nhân, 60% là không khí. Trong lần quét thứ hai, chúng tôi cho bảy hạt óc chó vào một cốc và đo từng hạt riêng biệt. Hãy khám phá bên dưới.'
+    },
+    use: {
+      en: 'Why it matters: in-shell walnuts are traded on kernel yield. Empty, shrivelled or poorly filled nuts, insect damage and mould cannot be seen from the outside, which is why nut processors now use inline X-ray sorters to reject them. Walnut breeding programmes use X-ray CT to measure kernel filling, shell thickness and air volume on hundreds of nuts without cracking them. A 3D X-ray microscope gives the detailed picture behind such measurements: to define and check sorting limits, grade samples from a lot, or compare varieties.',
+      vi: 'Ý nghĩa: óc chó nguyên vỏ được mua bán dựa trên tỷ lệ nhân. Hạt rỗng, nhân teo hoặc không đầy, hư hại do côn trùng và nấm mốc không thể nhìn thấy từ bên ngoài, vì vậy các nhà chế biến hạt hiện sử dụng máy phân loại X-quang trên dây chuyền để loại bỏ chúng. Các chương trình chọn giống óc chó dùng chụp cắt lớp X-quang (CT) để đo độ đầy nhân, độ dày vỏ và thể tích không khí trên hàng trăm hạt mà không cần đập vỡ. Kính hiển vi X-quang 3D cung cấp hình ảnh chi tiết đằng sau các phép đo đó: để xác định và kiểm tra ngưỡng phân loại, đánh giá mẫu từ một lô hàng hoặc so sánh các giống.'
+    },
+    settings: { kv: 50, watt: 25, time: { en: '8 min', vi: '8 phút' } },
+    layout: 'landscape',            // wide main images (two nuts side by side)
+    explore: { file: 'nut-box-cut.jpg', en: 'A cup with seven walnuts, opened virtually', vi: 'Một cốc bảy hạt óc chó, được mở ảo' },
+    teaser: [                       // the two small images on the home page
+      { file: 'nut-box-top.jpg', tag: '3D', en: 'The cup of walnuts seen from above', vi: 'Cốc óc chó nhìn từ trên xuống' },
+      { file: 'nut-box-chart.jpg', en: 'Air in the space inside the shell for each nut, from 63% down to 26%', vi: 'Không khí trong không gian bên trong vỏ của từng hạt, từ 63% xuống 26%' }
+    ],
+    exploreLayout: 'square',        // the explorer uses this image (nearly square) instead of the first image
+    frameRatio: '956 / 1006',       // width / height of the explorer image
+    images: [
+      { file: 'nut-cut.jpg',     tag: '3D', en: '3D view – virtual cut: fresh walnut (left), old walnut (right)', vi: 'Hình 3D – lát cắt ảo: hạt óc chó mới (trái), hạt cũ (phải)' },
+      { file: 'nut-outside.jpg', tag: '3D', en: '3D view – outside: the two nuts look almost the same', vi: 'Hình 3D – bên ngoài: hai hạt trông gần như giống nhau' }
+    ],
+    features: [
+      {
+        id: 'full',
+        x: 50, y: 30,
+        label: { en: 'A full kernel', vi: 'Nhân đầy' },
+        title: { en: 'A well-filled nut', vi: 'Một hạt có nhân đầy' },
+        text: {
+          en: 'Seven walnuts were scanned together in one 8-minute run. The virtual cut passes through several of them at once, without opening the cup or cracking a shell. In this nut the kernel fills the shell with firm, solid lobes; only narrow gaps along the shell contain air.',
+          vi: 'Bảy hạt óc chó được quét cùng lúc trong một lần quét 8 phút. Lát cắt ảo đi qua nhiều hạt cùng lúc mà không cần mở cốc hay đập vỡ vỏ. Ở hạt này, nhân lấp đầy vỏ với các múi chắc và đặc; chỉ những khe hẹp dọc theo vỏ là chứa không khí.'
+        },
+        zoom: { file: 'nut-cup-full.jpg', en: 'Close-up: a well-filled kernel', vi: 'Cận cảnh: một nhân đầy' },
+        images: [
+          { file: 'nut-box-top.jpg', tag: '3D', en: 'The cup of walnuts seen from above', vi: 'Cốc óc chó nhìn từ trên xuống' },
+          { file: 'nut-cup-side.jpg', tag: '3D', en: 'Another virtual cut through the cup', vi: 'Một lát cắt ảo khác qua cốc' }
+        ]
+      },
+      {
+        id: 'shrivelled',
+        x: 78, y: 19,
+        label: { en: 'A shrivelled kernel', vi: 'Nhân teo' },
+        title: { en: 'A shrivelled nut', vi: 'Một hạt có nhân teo' },
+        text: {
+          en: 'In the same cup, other nuts look very different inside: the kernel has dried out into thin, crumpled layers that no longer fill the shell, leaving large air spaces. From the outside, these nuts cannot be told apart from the good ones.',
+          vi: 'Trong cùng một cốc, những hạt khác trông rất khác bên trong: nhân đã khô lại thành những lớp mỏng, nhàu nát, không còn lấp đầy vỏ và để lại nhiều khoảng trống. Nhìn từ bên ngoài, không thể phân biệt những hạt này với các hạt tốt.'
+        },
+        zoom: { file: 'nut-cup-shrivelled.jpg', en: 'Close-up: a shrivelled, dried-out kernel', vi: 'Cận cảnh: một nhân teo, khô' },
+        images: [
+          { file: 'nut-box-slices.jpg', en: 'Slices through the cup, each nut coloured by its air fraction', vi: 'Lát cắt qua cốc, mỗi hạt được tô màu theo tỷ lệ không khí' }
+        ]
+      },
+      {
+        id: 'ranking',
+        x: 52, y: 50,
+        label: { en: 'Nut by nut', vi: 'Từng hạt' },
+        title: { en: 'Seven walnuts, graded one by one', vi: 'Bảy hạt óc chó, phân loại từng hạt' },
+        text: {
+          en: 'The analysis, tailored for this study (not part of the standard software package), separates every nut automatically and measures how much of the space inside each shell is air. The results range from 26% to 63%: two nuts stand out with more than 60% air, two others are well filled with less than 30%. Ranked like this, a batch can be graded against a kernel-fill limit without opening a single nut.',
+          vi: 'Phân tích được xây dựng riêng cho nghiên cứu này (không thuộc gói phần mềm tiêu chuẩn) tự động tách từng hạt và đo tỷ lệ không khí trong không gian bên trong mỗi vỏ. Kết quả dao động từ 26% đến 63%: hai hạt nổi bật với hơn 60% không khí, hai hạt khác có nhân đầy với dưới 30%. Được xếp hạng như vậy, cả lô có thể được phân loại theo ngưỡng độ đầy nhân mà không cần mở một hạt nào.'
+        },
+        zoom: { file: 'nut-box-slices.jpg', en: 'Each nut separated and coloured by its air fraction', vi: 'Từng hạt được tách riêng và tô màu theo tỷ lệ không khí' },
+        images: [
+          { file: 'nut-box-chart.jpg', wide: true, en: 'Air in the space inside the shell for each numbered nut, from 63% down to 26%', vi: 'Không khí trong không gian bên trong vỏ của từng hạt được đánh số, từ 63% xuống 26%' }
+        ]
+      }
+    ]
+  },
+
   {
     id: 'birthday-candle',
     year: 2026,
