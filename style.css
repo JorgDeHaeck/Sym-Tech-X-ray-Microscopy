@@ -878,3 +878,19 @@ p + p { margin-top: 1em; }
 .cat-card .shot { cursor: pointer; height: 100%; }
 .cat-card:hover .shot { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 .cat-card .shot figcaption { color: var(--ink); }
+
+/* landscape scans of the month (e.g. two walnuts side by side), set with layout: 'landscape' in scans.js (20261104) */
+.ex-stage.landscape { aspect-ratio: 5 / 4; }
+.ex-stage.landscape .ex-frame { top: 50%; bottom: auto; left: 4%; right: 4%; translate: 0 -50%; }
+.sotw-gallery.landscape { grid-template-columns: 1fr; }
+.sotw-gallery.landscape .shot img { aspect-ratio: 16 / 10; }
+.ex-stage.square { aspect-ratio: 1 / 1; }
+
+/* landscape main images: as high as the text column next to them, bottoms aligned (update 3) */
+@media (min-width: 1025px) {
+  .sotw-body:has(.sotw-gallery.landscape) { align-items: stretch; }
+  .sotw-body:has(.sotw-gallery.landscape) .scan-settings { margin-bottom: 0; }   /* tiles end exactly at the bottom line */
+  .sotw-gallery.landscape { contain: size; display: grid; grid-template-rows: 1fr 1fr; height: 100%; }
+  .sotw-gallery.landscape .shot { display: flex; flex-direction: column; min-height: 0; }
+  .sotw-gallery.landscape .shot img { flex: 1 1 0; min-height: 0; height: auto; aspect-ratio: auto; object-fit: contain; }
+}
